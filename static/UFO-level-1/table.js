@@ -1,22 +1,25 @@
 
-var form = d3.select("#form");
-var button = d3.select("#button");
+let form = d3.select("#form");
+let button = d3.select("#button");
+let results = document.getElementById("#UFO-results");
+let results_header = document.getElementById("#results-header");
 
 form.on("submit", dateFilter);
 button.on("click", dateFilter);
-
 function displayData(inputData){
+
     // use d3 to set the cursor on specific html tags
-    var tbody = d3.select("tbody");
-    var thead = d3.select("thead");
-   
+    let tbody = d3.select("tbody");
+    let thead = d3.select("thead");
+    tbody.html("");
+    thead.html("");
     
 
     // Fill the data table using the values from each object in the data set
     inputData.forEach((ufoReport) => {
-        var row = tbody.append("tr");
+        let row = tbody.append("tr");
         Object.entries(ufoReport).forEach(([key,value]) => {
-            var cell = row.append("td");
+            let cell = row.append("td");
             cell.text(value);
         })
     })
@@ -29,19 +32,18 @@ function displayData(inputData){
     })
         }
 
-function test() {
-    d3.event.preventDefault();
-    var inputElement = d3.select("#date-input")
-    var inputValue = inputElement.property("value");
-    console.log(inputValue);
-    d3.select("h1").text(inputValue);
+function resetTable(){
+    document.getElementById("UFO-result").innerHTML = "1111";
 }
 
 function dateFilter(){ 
     d3.event.preventDefault();
-    var filterValue = d3.select("#date-input").property("value");
-    var dateFiltered = data.filter(object => object.datetime === filterValue);
+    let filterValue = d3.select("#date-input").property("value");
+    let dateFiltered = data.filter(object => object.datetime === filterValue);
     displayData(dateFiltered)
+
+
+
     
 }
 
