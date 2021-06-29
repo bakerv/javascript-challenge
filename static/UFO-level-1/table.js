@@ -1,52 +1,48 @@
 
-// function convertData(saveLocation, dataSource){
-//     // Loop through each Object in the data array
-//    dataSource.forEach((ufObject) => {
-//        // insert a new row for each Object
-//        let row = saveLocation.insertRow();
+var form = d3.select("#form");
+var button = d3.select("#button");
 
-//        // Loop through all keys in each Object
-//        Object.entries(ufObject).forEach(([key,value]) => {
-//            // Create and fill cells with values from the Objects keys
-//           let cell = row.insertCell();
-//           let contents = document.createTextNode(ufObject[key]);
-//           cell.appendChild(contents);
-//        })
-//    })
+form.on("submit", dateFilter);
+button.on("click", dateFilter);
 
-//    // After creating the table body, add the table heads
-//    let rowHeader = saveLocation.createTHead().insertRow();
-//    Object.entries(dataSource[0]).forEach(([key, value]) =>{
-//        let tableHeader = document.createElement("th");
-//        let contents = document.createTextNode(key);
-//        tableHeader.appendChild(contents);
-//        rowHeader.appendChild(tableHeader);
-//    })
-// }
+function displayData(inputData){
+    // use d3 to set the cursor on specific html tags
+    var tbody = d3.select("tbody");
+    var thead = d3.select("thead");
+   
+    
 
-function displayData(data){
-    let tbody = d3.select("tbody")
-    let thead = d3.select("thead")
-
-    data.forEach((ufoReport) => {
-        let row = tbody.append("tr");
+    // Fill the data table using the values from each object in the data set
+    inputData.forEach((ufoReport) => {
+        var row = tbody.append("tr");
         Object.entries(ufoReport).forEach(([key,value]) => {
-            let cell = row.append("td");
+            var cell = row.append("td");
             cell.text(value);
         })
     })
 
+    // Create table header using they keys from the data object
     let header = thead.append("tr");
-    Object.entries(data[0]).forEach(([key,value]) => {
+    Object.entries(inputData[0]).forEach(([key,value]) => {
         let contents = header.append("th");
         contents.text(key);
     })
         }
 
+function test() {
+    d3.event.preventDefault();
+    var inputElement = d3.select("#date-input")
+    var inputValue = inputElement.property("value");
+    console.log(inputValue);
+    d3.select("h1").text(inputValue);
+}
+
+function dateFilter(){ 
+    d3.event.preventDefault();
+    var filterValue = d3.select("#date-input").property("value");
+    var dateFiltered = data.filter(object => object.datetime === filterValue);
+    displayData(dateFiltered)
+    
+}
+
 displayData(data)
-// function dateFilter(dataSource){
-//     // return = 
-// }
-// let saveLocation = document.querySelector("table");
-// let dataSource = data;
-// convertData(saveLocation, dataSource)
