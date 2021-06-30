@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="hero">
   <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,21 +12,35 @@
   <body>
     <div class="container-fluid">
         <div class="row">
-          <h1 class="hero"><center>UFO Sightings - National UFO Reporting Center</center></h1>
+          <h1 class ="jumbotron"><center>UFO Sightings - National UFO Reporting Center</center></h1>
         </div>
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-2">
+        
+        <div class="col-md-2">
+          
           <form id="form">
-            <div class="form-group">
-              <label>Filter UFO reports by date of occurrence</label>
-              <input class="form-control" id="date-input" type="text">
+            <div class="card border-2 border-danger p-1 rounded-0" style="background-color:black">
+              <label>Date:</label>
+              <input class="form-control rounded-0" id="date-input" type="text">
+              <label>City:</label>
+              <input class="form-control rounded-0" id="city-input" type="text">
+              <label>State:</label>
+              <input class="form-control rounded-0" id="state-input" type="text">
+              <label>Country:</label>
+              <input class="form-control rounded-0" id="country-input" type="text">
+              <label>Shape:</label>
+              <input class="form-control rounded-0" id="shape-input" type="text">
+              </br></br>
+              <button id="button" type="button" class="btn btn-lg btn-block rounded-0" style="color:white">Filter Table</button>
             </div>
-            <button id="button" type="button" class="btn btn-default">Enter</button>
+              
           </form>
+        
         </div>
-        <div class="col">
+        
+        <div class="col-md-10">
           <table class="table table-dark table-striped">
             <thead></thead>
             <tbody></tbody>
@@ -37,5 +51,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
   <script src="static/data/data.js"></script>
-  <script src="static/UFO-level-1/table.js"></script>
+  <script src="static/UFO-level-2/table.js"></script>
 </html>

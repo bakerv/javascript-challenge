@@ -4,9 +4,10 @@ let form = d3.select("#form");
 let button = d3.select("#button");
 
 // initialize event monitors
-form.on("submit", dateFilter);
-button.on("click", dateFilter);
+//form.on("submit", filterData);
+button.on("click", filterData);
 
+//Generate html table, and output to the page
 function displayData(inputData){
 
     // use d3 to set the cursor on specific html tags
@@ -35,10 +36,11 @@ function displayData(inputData){
 
 // filter the data using user input
 function filterData(){
+    d3.event.preventDefault();
+
     function dateFilter(inputData){ 
         d3.event.preventDefault();
         let filterValue = d3.select("#date-input").property("value");
-        let filtered;
         if (filterValue === ""){ 
             filtered = inputData
         }   else {
@@ -48,9 +50,7 @@ function filterData(){
     }
 
     function cityFilter(inputData){ 
-        d3.event.preventDefault();
         let filterValue = d3.select("#city-input").property("value");
-        let filtered;
         if (filterValue === ""){ 
             filtered = inputData
         }   else {
@@ -60,32 +60,45 @@ function filterData(){
     }
 
     function stateFilter(inputData){ 
-        d3.event.preventDefault();
         let filterValue = d3.select("#state-input").property("value");
-        if (filterValue === ""){
-            let Filtered = inputData     
-        }
-        else {
-            let Filtered = data.filter(object => object.city === filterValue);
-        }
+        let filtered;
+        if (filterValue === ""){ 
+            filtered = inputData
+        }   else {
+            filtered = inputData.filter(object => object.state === filterValue);
+            }
+        return filtered;
     }
 
     function countryFilter(inputData){ 
-        d3.event.preventDefault();
         let filterValue = d3.select("#country-input").property("value");
-        let Filtered = data.filter(object => object.country === filterValue);
+        let filtered;
+        if (filterValue === ""){ 
+            filtered = inputData
+        }   else {
+            filtered = inputData.filter(object => object.country === filterValue);
+            }
+        return filtered;
     }
 
     function shapeFilter(inputData){ 
-        d3.event.preventDefault();
-        let filterValue = d3.select("#shape-input").property("value");
-        let Filtered = data.filter(object => object.shape === filterValue);
+        let filterValue = d3.select("#shape-input").property("value").toLowerCase();
+        let filtered;
+        if (filterValue === ""){ 
+            filtered = inputData
+        }   else {
+            filtered = inputData.filter(object => object.shape === filterValue);
+            }
+        return filtered;
     }
-
-    let dateFiltered = dateFilter(data);
+    let dateFiltered = dateFilter(data)
     let cityFiltered = cityFilter(dateFiltered);
     let stateFiltered = stateFilter(cityFiltered);
-    let 
+    let countryFiltered = countryFilter(stateFiltered);
+    let shapeFiltered = shapeFilter(countryFiltered);
+
+    displayData(shapeFiltered)
+
 }
 
 displayData(data)

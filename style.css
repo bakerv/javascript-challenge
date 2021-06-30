@@ -5,11 +5,13 @@ img {
 
 body {
     color:white;
-    background-color:rgb(54, 54, 54);
+    background-color: transparent;
 }
 
 h1{
     color:white;
+    padding: 200px;
+    font-size:60px;
     
 }
 
@@ -26,7 +28,11 @@ h1{
     padding: 20px;
     margin: 0;
     background: black;
-    background-image: url("http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001757/GSFC_20171208_Archive_e001757~orig.jpg");
+    background-image: url("https://media.npr.org/assets/img/2021/06/25/ap21154653162696-c015233e9fc05e6adf5e303af924a9536a2f379f.jpg");
     background-attachment: fixed;
-    background-position: bottom center;
     background-size: cover;}
+
+    .btn{
+        background-color: rgba(154, 171, 209, 0.322);
+        width: 100%; 
+      }
