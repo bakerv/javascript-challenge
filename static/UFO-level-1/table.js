@@ -1,11 +1,12 @@
 
+// select the input field and search button
 let form = d3.select("#form");
 let button = d3.select("#button");
-let results = document.getElementById("#UFO-results");
-let results_header = document.getElementById("#results-header");
 
+// initialize event monitors
 form.on("submit", dateFilter);
 button.on("click", dateFilter);
+
 function displayData(inputData){
 
     // use d3 to set the cursor on specific html tags
@@ -32,19 +33,12 @@ function displayData(inputData){
     })
         }
 
-function resetTable(){
-    document.getElementById("UFO-result").innerHTML = "1111";
-}
-
+// filter the data using user input
 function dateFilter(){ 
     d3.event.preventDefault();
     let filterValue = d3.select("#date-input").property("value");
     let dateFiltered = data.filter(object => object.datetime === filterValue);
-    displayData(dateFiltered)
-
-
-
-    
+    displayData(dateFiltered) 
 }
 
 displayData(data)

@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-</head>
-<body>
-    <form id="form">
-        <div class="form-group">
-          <label for="patient-form">Filter UFO reports by date of occurrence</label>
-          <input class="form-control" id="date-input" name="patient-form" type="text">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <img src="images-assets.nasa.gov/image/GSFC_20171208_Archive_e001757/GSFC_20171208_Archive_e001757~orig.jpg">
+      <div class="row">
+        <form id="form">
+          <div class="form-group">
+            <label for="patient-form">Filter UFO reports by date of occurrence</label>
+            <input class="form-control" id="date-input" name="patient-form" type="text">
+          </div>
+          <button id="button" type="button" class="btn btn-default">Enter</button>
+        </form>
+      </div>
+      <h1>Data successfully inserted into a table using javascript!</h1>
+      <div class="row">
+        <div class="col-2">
+          Insert Side Bar Here
         </div>
-        <button id="button" type="button" class="btn btn-default">Enter</button>
-      </form>
-    <h1>Data successfully inserted into a table using javascript!</h1>
-    <table id="testTable">
-        <thead id ="results-header">
-
-        </thead>
-        <tbody id="UFO-results">
-
-        </tbody>
-
-    </table>
-    
-</body>
-<script src="static/data/data.js"></script>
-<script src="static/UFO-level-1/table.js"></script>
+        <div class="col">
+          <table>
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+  <script src="static/data/data.js"></script>
+  <script src="static/UFO-level-1/table.js"></script>
 </html>
