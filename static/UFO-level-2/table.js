@@ -50,7 +50,7 @@ function filterData(){
     }
 
     function cityFilter(inputData){ 
-        let filterValue = d3.select("#city-input").property("value");
+        let filterValue = d3.select("#city-input").property("value").toLowerCase();
         if (filterValue === ""){ 
             filtered = inputData
         }   else {
@@ -60,7 +60,7 @@ function filterData(){
     }
 
     function stateFilter(inputData){ 
-        let filterValue = d3.select("#state-input").property("value");
+        let filterValue = d3.select("#state-input").property("value").toLowerCase();
         let filtered;
         if (filterValue === ""){ 
             filtered = inputData
@@ -71,7 +71,7 @@ function filterData(){
     }
 
     function countryFilter(inputData){ 
-        let filterValue = d3.select("#country-input").property("value");
+        let filterValue = d3.select("#country-input").property("value").toLowerCase();
         let filtered;
         if (filterValue === ""){ 
             filtered = inputData
