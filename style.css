@@ -28,7 +28,7 @@ h1{
     padding: 20px;
     margin: 0;
     background: black;
-    background-image: url("https://images-assets.nasa.gov/image/iss040e064788/iss040e064788~orig.jpg");
+    background-image: url("static/images/NASA_earthview.jpg");
     background-attachment: fixed;
     background-size: cover;}
 

@@ -7,4 +7,5 @@ This project uses Javascript, HTML, CSS, Bootstrap, and D3.js to automatically g
 ## Data Used
 
 The data used for this project was a small sample of the UFORC database of UFO sightings. The dates range from 1/1/2010 to 1/14/2010. 
-[National UFO Reporting Center](http://www.nuforc.org/)
+
+Stepien, David. National UFO Reporting Center, June 2021, www.nuforc.org/. 
