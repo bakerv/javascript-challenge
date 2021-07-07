@@ -1,7 +1,6 @@
 # UFO Sightings - National UFO Reporting Center
 This project uses Javascript, HTML, CSS, Bootstrap, and D3.js to automatically generate and serve JSON data. This is accomplished by targeting desired html tags, and writing to the page as the data is being parsed. Filters have been implemented to facilite searching through the table data. 
 ## Website
-[UFO Sightings](https://bakerv.github.io/javascript-challenge/)
 [<img src="https://github.com/bakerv/javascript-challenge/blob/main/static/images/deployment_sample.PNG">](https://bakerv.github.io/javascript-challenge/)
 
 ## Data Used
